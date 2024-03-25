@@ -40,6 +40,7 @@ describe('RabbitService', () => {
 
   describe('sendMessage', () => {
     it('should publish a message to the channel', async () => {
+      //dummy username for testing
       const message = { username: 'john' };
       await rabbitService.init();
       await rabbitService.sendMessage(message);

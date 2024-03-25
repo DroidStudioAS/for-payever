@@ -48,10 +48,10 @@ export class UserService {
     });
     await createdUser.save();
 
-    // Send RabbitMQ message
+    //Send Message
     await this.rabbitService.sendMessage({ userId: createdUser.id });
 
-    // Send email
+    //Send email
     await this.mailerService.sendMail({
       to: createdUser.email,
       subject: 'Welcome to our app!',

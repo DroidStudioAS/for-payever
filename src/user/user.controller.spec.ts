@@ -19,13 +19,14 @@ describe('UserController', () => {
     findOneUserFromExternalApi: jest.fn((userId: number) => {
       return {
         id: userId,
-        email: 'user@example.com',
-        first_name: 'John',
+        email: 'someuser@example.com',
+        first_name: 'Johny',
         last_name: 'Doe',
         avatar: 'http://',
       };
     }),
     getUserAvatar: jest.fn(() => {
+      //mock base64
       return Buffer.from('generate-a-base64-string').toString('base64');
     }),
     deleteUserAvatar: jest.fn((userId: number) => {
@@ -45,18 +46,18 @@ describe('UserController', () => {
           id: 1,
           _id: new mongoose.Types.ObjectId().toString(),
           __v: 0,
-          first_name: 'First',
+          first_name: 'Num_One',
           last_name: 'User',
-          email: 'first@email.com',
+          email: 'num_one@email.com',
           avatar: 'http://',
         },
         {
           id: 2,
           _id: new mongoose.Types.ObjectId().toString(),
           __v: 0,
-          first_name: 'Second',
+          first_name: 'Num_Two',
           last_name: 'User',
-          email: 'second@email.com',
+          email: 'num_two@email.com',
           avatar: 'http://',
         },
       ];

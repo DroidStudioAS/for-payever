@@ -10,8 +10,9 @@ export class RabbitService {
 
   async init() {
     this.connection = await amqp.connect(process.env.RABBITMQ_URL);
+    //uncomment only for debugging purposes
     // if (!process.env.TEST_ENV) {
-    //   console.log('Connected to RabbitMQ successfully!');
+    //   console.log('RabbitMQ connection initialized!');
     // }
     this.channel = await this.connection.createChannel();
     await this.channel.assertExchange('user_created', 'fanout');

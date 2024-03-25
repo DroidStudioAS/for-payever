@@ -1,3 +1,4 @@
+/*********Data Transfer User Object*********/
 import { IsEmail, IsNotEmpty, IsOptional, IsString } from 'class-validator';
 
 export class CreateUserDto {
